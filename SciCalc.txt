@@ -1,0 +1,261 @@
+import java.util.Scanner;
+
+public class SciCalculator
+{
+    public static void main(String[] args)
+    {
+        Scanner myScanner = new Scanner(System.in);
+
+        System.out.println("Current Result: 0.0");
+        System.out.println("\nCalculator Menu");
+        System.out.println("---------------");
+        System.out.println("0. Exit Program");
+        System.out.println("1. Addition");
+        System.out.println("2. Subtraction");
+        System.out.println("3. Multiplication");
+        System.out.println("4. Division");
+        System.out.println("5. Exponentiation");
+        System.out.println("6. Logarithm");
+        System.out.println("7. Display Average");
+        System.out.println("\nEnter Menu Selection:");
+
+        int calcSel = myScanner.nextInt();
+        double sum = 0.0;
+        int numCalc; numCalc = 0;
+        //keeping track of the calculation selections,
+        // and initializing the sum and number of calculations.
+
+        //creating a boolean in order to engage the while loop in order to track results.
+        boolean calcBool = true;
+        while (calcBool)
+        {
+
+            double avgCalc = (sum/numCalc);
+            double roundOff = (double) Math.round(avgCalc * 100) / 100;
+            //rounding the average calulation as per request
+            //(https://stackoverflow.com/questions/11701399/round-up-to-2-decimal-places-in-java)
+
+
+            //detailing the options for each selections
+            if (calcSel == 7)
+            {
+                if (numCalc > 0)
+                {
+                    System.out.println("Sum of calculations:"+sum+"");
+                    System.out.println("Number of calculations:"+numCalc+"");
+                    System.out.println("Average of calculations:"+roundOff+"");
+                    System.out.println("\nEnter Menu Selection:");
+                    calcSel = myScanner.nextInt();
+                }
+
+                else if (numCalc == 0)
+                {
+                    System.out.println("Error: No calculations yet to average!");
+                    System.out.println("\nEnter Menu Selection:");
+                    calcSel = myScanner.nextInt();
+                }
+            }
+
+            if (calcSel == 0)
+            {
+                System.out.println("Thanks for using this calculator. Goodbye!");
+                calcBool = false;
+                System.exit(0);
+            }
+
+            if (calcSel > 7 || calcSel <0)
+            {
+                System.out.println("Error: Invalid selection!");
+                System.out.println("Enter Menu Selection:");
+                calcSel = myScanner.nextInt();
+
+                if (calcSel == 0)
+                {
+                    System.out.println("Thanks for using this calculator. Goodbye!");
+                    calcBool = false;
+                    System.exit(0);
+                }
+
+            }
+
+            if (calcSel > 0 && calcSel <7)
+            {
+            double reSponse;
+            System.out.print("Enter first operand:");
+            double firstOp = myScanner.nextDouble();
+            System.out.print("Enter second operand:");
+            double secondOp = myScanner.nextDouble();
+            //labeling each operator, and keeping track of them within the loop.
+
+                switch(calcSel)
+                {
+                    case 1:
+                        reSponse = firstOp + secondOp;
+                        sum += reSponse;
+                        numCalc = numCalc + 1;
+                        System.out.println("Current Result:" + reSponse + "");
+                        System.out.println("\nCalculator Menu");
+                        System.out.println("---------------");
+                        System.out.println("0. Exit Program");
+                        System.out.println("1. Addition");
+                        System.out.println("2. Subtraction");
+                        System.out.println("3. Multiplication");
+                        System.out.println("4. Division");
+                        System.out.println("5. Exponentiation");
+                        System.out.println("6. Logarithm");
+                        System.out.println("7. Display Average");
+                        System.out.println("\nEnter Menu Selection:");
+                        calcSel = myScanner.nextInt();
+
+                        if (calcSel == 0)
+                        {
+                            System.out.println("Thanks for using this calculator. Goodbye!");
+                            calcBool = false;
+                            System.exit(0);
+                        }
+                        break;
+
+                    case 2:
+                        reSponse = firstOp - secondOp;
+                        sum += reSponse;
+                        numCalc = numCalc + 1;
+                        System.out.println("Current Result:" + reSponse + "");
+                        System.out.println("\nCalculator Menu");
+                        System.out.println("---------------");
+                        System.out.println("0. Exit Program");
+                        System.out.println("1. Addition");
+                        System.out.println("2. Subtraction");
+                        System.out.println("3. Multiplication");
+                        System.out.println("4. Division");
+                        System.out.println("5. Exponentiation");
+                        System.out.println("6. Logarithm");
+                        System.out.println("7. Display Average");
+                        System.out.println("\nEnter Menu Selection:");
+                        calcSel = myScanner.nextInt();
+
+                        if (calcSel == 0)
+                        {
+                            System.out.println("Thanks for using this calculator. Goodbye!");
+                            calcBool = false;
+                            System.exit(0);
+                        }
+
+                        break;
+
+                    case 3:
+                        reSponse = firstOp * secondOp;
+                        sum += reSponse;
+                        numCalc = numCalc + 1;
+                        System.out.println("Current Result:" + reSponse + "");
+                        System.out.println("\nCalculator Menu");
+                        System.out.println("---------------");
+                        System.out.println("0. Exit Program");
+                        System.out.println("1. Addition");
+                        System.out.println("2. Subtraction");
+                        System.out.println("3. Multiplication");
+                        System.out.println("4. Division");
+                        System.out.println("5. Exponentiation");
+                        System.out.println("6. Logarithm");
+                        System.out.println("7. Display Average");
+                        System.out.println("\nEnter Menu Selection:");
+                        calcSel = myScanner.nextInt();
+
+                        if (calcSel == 0)
+                        {
+                            System.out.println("Thanks for using this calculator. Goodbye!");
+                            calcBool = false;
+                            System.exit(0);
+                        }
+
+                        break;
+
+                    case 4:
+                        reSponse = firstOp / secondOp;
+                        sum += reSponse;
+                        numCalc = numCalc + 1;
+                        System.out.println("Current Result:" + reSponse + "");
+                        System.out.println("\nCalculator Menu");
+                        System.out.println("---------------");
+                        System.out.println("0. Exit Program");
+                        System.out.println("1. Addition");
+                        System.out.println("2. Subtraction");
+                        System.out.println("3. Multiplication");
+                        System.out.println("4. Division");
+                        System.out.println("5. Exponentiation");
+                        System.out.println("6. Logarithm");
+                        System.out.println("7. Display Average");
+                        System.out.println("\nEnter Menu Selection:");
+                        calcSel = myScanner.nextInt();
+
+                        if (calcSel == 0)
+                        {
+                            System.out.println("Thanks for using this calculator. Goodbye!");
+                            calcBool = false;
+                            System.exit(0);
+                        }
+
+                        break;
+
+                    case 5:
+                        reSponse = Math.pow(firstOp, secondOp);
+                        sum += reSponse;
+                        numCalc = numCalc + 1;
+                        System.out.println("Current Result:" + reSponse + "");
+                        System.out.println("\nCalculator Menu");
+                        System.out.println("---------------");
+                        System.out.println("0. Exit Program");
+                        System.out.println("1. Addition");
+                        System.out.println("2. Subtraction");
+                        System.out.println("3. Multiplication");
+                        System.out.println("4. Division");
+                        System.out.println("5. Exponentiation");
+                        System.out.println("6. Logarithm");
+                        System.out.println("7. Display Average");
+                        System.out.println("\nEnter Menu Selection:");
+                        calcSel = myScanner.nextInt();
+
+                        if (calcSel == 0)
+                        {
+                            System.out.println("Thanks for using this calculator. Goodbye!");
+                            calcBool = false;
+                            System.exit(0);
+                        }
+
+                        break;
+                    //I found the Math.pow code here
+                    //(https://stackoverflow.com/questions/22084373/does-java-have-an-exponential-operator)
+
+                    case 6:
+                        reSponse = (Math.log(secondOp) / Math.log(firstOp));
+                        sum += reSponse;
+                        numCalc = numCalc + 1;
+                        System.out.println("Current Result:" + reSponse + "");
+                        System.out.println("\nCalculator Menu");
+                        System.out.println("---------------");
+                        System.out.println("0. Exit Program");
+                        System.out.println("1. Addition");
+                        System.out.println("2. Subtraction");
+                        System.out.println("3. Multiplication");
+                        System.out.println("4. Division");
+                        System.out.println("5. Exponentiation");
+                        System.out.println("6. Logarithm");
+                        System.out.println("7. Display Average");
+                        System.out.println("\nEnter Menu Selection:");
+                        calcSel = myScanner.nextInt();
+
+                        if (calcSel == 0)
+                        {
+                            System.out.println("Thanks for using this calculator. Goodbye!");
+                            calcBool = false;
+                            System.exit(0);
+                        }
+
+                        break;
+                    //I found the Math.log code here
+                    // (https://stackoverflow.com/questions/13831150/logarithm-algorithm)
+                    }
+            }
+
+        }
+    }
+}
