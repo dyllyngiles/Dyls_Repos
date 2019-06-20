@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+//THIS IS A NEW COMMENT SO MY INSTRUCTOR CAN SEE THAT I KNOW HOW TO NAVIGATE
+
 public class SciCalculator
 {
     public static void main(String[] args)
